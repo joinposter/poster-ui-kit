@@ -4,3 +4,4 @@ node_modules/
 dist
 
 bundle.js
+bundle.dist.js
