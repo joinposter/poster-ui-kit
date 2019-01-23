@@ -1,11 +1,10 @@
 import './css/button.less';
 import './css/normalize.less';
 
-import Button from './js/Button';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Button from './js/Button';
 
-ReactDOM.render(<Button />, document.getElementById('app-container'));
 
+ReactDOM.render(<Button outline={false}>Привет</Button>, document.getElementById('app-container'));

@@ -1,14 +1,14 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 
 export default class Button extends React.Component {
     render() {
-        let { onSubmit, disabled, children } = this.props;
+        let { className, children, outline } = this.props;
 
         return (
-            <button type="button" className="p-btn" onClick={onSubmit} disabled={disabled}>
-                {'Привет Костя!'}
+            <button className={`p-btn ${outline ? 'p-btn-outline' : ''} ${className || ''}`} {...this.props}>
+                {children}
             </button>
         )
     }
