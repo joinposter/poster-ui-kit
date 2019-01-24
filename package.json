@@ -2,21 +2,29 @@
   "name": "poster-ui-kit",
   "version": "1.0.7",
   "description": "",
-  "main": "./bundle.dist.js",
+  "main": "./dist/bundle.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/.bin/webpack-dev-server --inline --hot",
+    "build": "./node_modules/.bin/webpack --env.p"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ivanchenko/poster-ui-kit.git"
+    "url": "git+https://github.com/joinposter/poster-ui-kit.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ivanchenko/poster-ui-kit/issues"
+    "url": "https://github.com/joinposter/poster-ui-kit/issues"
   },
-  "homepage": "https://github.com/ivanchenko/poster-ui-kit#readme",
-  "dependencies": {
+  "homepage": "https://github.com/joinposter/poster-ui-kit#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.0",
     "babel-polyfill": "^6.26.0",
@@ -41,13 +49,5 @@
     "url-loader": "^1.1.2",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.11.3"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.8.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1"
   }
 }

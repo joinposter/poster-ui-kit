@@ -2,6 +2,11 @@
 var webpack = require('webpack');
 var path = require('path');
 var build = process.env.NODE_ENV === 'production';
+
+// Entry point for tests
+var entry = {
+    './dist/bundle.js': './src/demo.js',
+};
 /* eslint-enable */
 
 
@@ -10,15 +15,16 @@ process.argv.forEach((arg) => {
 
     if (arg === 'p' || arg === 'production') {
         build = true;
+
+        entry = {
+            './dist/bundle.min.js': './src/build.js',
+        };
     }
 });
 
 module.exports = {
     context: __dirname,
-    entry: {
-        'bundle.js': './src/index.js',
-        'bundle.dist.js': './src/export.js',
-    },
+    entry: entry,
 
     resolve: {
         extensions: ['.json', '.js', '.jsx', '.less'],
@@ -30,14 +36,25 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './'),
         filename: '[name]',
-        libraryTarget: 'commonjs2'
+        libraryTarget: build ? 'commonjs2' : undefined,
     },
+    externals: {
+        react: 'React',
+        'react-dom': 'ReactDOM',
+    },
+    devtool: build ? undefined : 'eval',
+
+    watch: !build,
+    watchOptions: { aggregateTimeout: 100 },
 
     module: {
         rules: [
             {
                 test: /\.jsx?$/,
                 loader: 'babel-loader?cacheDirectory',
+                exclude: [
+                    path.resolve(__dirname, 'node_modules'),
+                ],
                 query: {
                     presets: ['react', 'es2015', 'stage-0'],
                 },
@@ -50,7 +67,7 @@ module.exports = {
                 ],
             },
             {
-                test: /\.less/,
+                test: /\.less$/,
                 use: [
                     { loader: 'style-loader' },
                     { loader: 'css-loader' },
@@ -62,13 +79,6 @@ module.exports = {
                 loader: 'url-loader',
             },
         ],
-    },
-    devtool: build ? 'source-map' : 'eval',
-
-    watch: !build,
-
-    watchOptions: {
-        aggregateTimeout: 100,
     },
 
     plugins: [],
