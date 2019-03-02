@@ -5,12 +5,12 @@ import PropTypes from 'prop-types';
 /**
  * Preloader
  *
- * @param className
- * @param color
+ * @param props
  * @returns {*}
  * @constructor
  */
-const Spinner = ({ className, color }) => {
+const Spinner = (props) => {
+    const { className, color, ...otherProps } = props;
     const blades = [];
 
     for (let i = 0; i < 12; i += 1) {
@@ -18,7 +18,7 @@ const Spinner = ({ className, color }) => {
     }
 
     return (
-        <div className={`p-spinner ${color} animating ${className}`}>
+        <div className={`p-spinner ${color} animating ${className}`} {...otherProps}>
             {blades.map(item => <div key={item} className="p-spinner-blade" />)}
         </div>
     );
