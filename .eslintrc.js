@@ -53,6 +53,8 @@ module.exports = {
             { "code": 140 }
         ],
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "import/no-extraneous-dependencies": ["warning"],
+        "react/forbid-prop-types": [1, { checkContextTypes: true, checkChildContextTypes: true }],
         "import/no-amd": false,
         "no-continue": 0,
         "guard-for-in": 0,

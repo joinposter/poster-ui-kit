@@ -1,28 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import '../css/button.less';
+
+/**
+ * A button for main action
+ *
+ * @param props
+ * @returns {*}
+ * @constructor
+ */
+const Button = (props) => {
+    const {
+        className, children, outline, ...otherProps
+    } = props;
+
+    return (
+        <button className={`p-btn ${outline ? 'p-btn-outline' : ''} ${className}`} {...otherProps}>
+            {children}
+        </button>
+    );
+};
+
+Button.defaultProps = {
+    outline: false,
+    className: '',
+};
+
+Button.propTypes = {
+    outline: PropTypes.bool,
+    className: PropTypes.string,
+    children: PropTypes.any.isRequired,
+};
 
 
-export default class Button extends React.Component {
-    static defaultProps = {
-        outline: false,
-        className: '',
-    };
-
-    static propTypes = {
-        outline: PropTypes.bool,
-        className: PropTypes.string,
-        children: PropTypes.any.isRequired,
-    };
-
-    render() {
-        const { className, children, outline, ...otherProps } = this.props;
-
-        return (
-            <button className={`p-btn ${outline ? 'p-btn-outline' : ''} ${className}`} {...otherProps}>
-                {children}
-            </button>
-        );
-    }
-}
+export default Button;

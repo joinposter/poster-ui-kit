@@ -1,47 +1,48 @@
-/* eslint-disable */
-var webpack = require('webpack');
-var path = require('path');
-var build = process.env.NODE_ENV === 'production';
+const webpack = require('webpack');
+const path = require('path');
 
-// Entry point for tests
-var entry = {
-    './dist/bundle.js': './src/demo.js',
-};
-/* eslint-enable */
 
+let build = false;
 
 process.argv.forEach((arg) => {
-    arg = arg.split('.')[1];
+    const arg2 = arg.split('.')[1];
 
-    if (arg === 'p' || arg === 'production') {
+    if (arg2 === 'p' || arg2 === 'production') {
         build = true;
-
-        entry = {
-            './dist/bundle.min.js': './src/build.js',
-        };
     }
 });
 
 module.exports = {
     context: __dirname,
-    entry: entry,
+    entry: build
+        ? {
+            './dist/bundle.min.js': './src/build.js',
+        }
+        // Entry point for demo app
+        : {
+            './dist/demo.js': './example/demo.js',
+        },
 
     resolve: {
         extensions: ['.json', '.js', '.jsx', '.less'],
         alias: {
-            'poster-ui-kit': path.resolve(__dirname, 'src/export.js'),
+            'poster-ui-kit': path.resolve(__dirname, 'src/build.js'),
         },
     },
-
     output: {
         path: path.resolve(__dirname, './'),
         filename: '[name]',
         libraryTarget: build ? 'commonjs2' : undefined,
     },
-    externals: {
-        react: 'React',
-        'react-dom': 'ReactDOM',
-    },
+
+    // Imports which should be excluded on build
+    externals: build
+        ? {
+            react: 'react',
+            'react-dom': 'ReactDOM',
+        }
+        : undefined,
+
     devtool: build ? undefined : 'eval',
 
     watch: !build,

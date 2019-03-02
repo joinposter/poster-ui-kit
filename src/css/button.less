@@ -14,8 +14,8 @@ html, body {
         font-weight: 500;
         font-size: 14px;
 
-        color: #FFFFFF;
-        background: #57A84A;
+        color: @color-white;
+        background: @color-green;
 
         border: 0px;
         border-radius: 3px;
@@ -23,11 +23,11 @@ html, body {
         transition: background-color 0.1s ease-out;
 
         &:hover {
-            background: #66CA56;
+            background: @color-green-lighter;
         }
 
         &:active {
-            background: #438139;
+            background: @color-green-darker;
         }
 
         &:disabled {
@@ -36,22 +36,23 @@ html, body {
     }
 
     .p-btn-outline {
-        border: 1px solid #57A84A;
-        background-color: #FFFFFF;
-        color: #57A84A;
+        border: 1px solid @color-green;
+        color: @color-green;
+
+        background-color: @color-white;
 
         &:hover {
-            background: #e7f6e8;
+            background: @color-white-green-lighter;
         }
 
         &:active {
-            background: #bde5be;
+            background: @color-white-green-darker;
         }
 
         &:disabled {
             color: #C0C0C0;
             border-color: #C0C0C0;
-            background: #FFFFFF;
+            background: @color-white;
         }
     }
 }

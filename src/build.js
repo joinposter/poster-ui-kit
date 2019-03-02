@@ -1,6 +1,9 @@
-import './css/normalize.less'
-import './css/button.less'
+import './css/main.less';
 
 import Button from './js/Button';
+import Spinner from './js/Spinner';
 
-export { Button };
+
+const PosterUiKit = { Button, Spinner };
+
+export default PosterUiKit;
