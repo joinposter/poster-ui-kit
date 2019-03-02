@@ -23,6 +23,8 @@ module.exports = {
             './dist/demo.js': './example/demo.js',
         },
 
+    mode: build ? 'production' : 'development',
+
     resolve: {
         extensions: ['.json', '.js', '.jsx', '.less'],
         alias: {
@@ -81,25 +83,4 @@ module.exports = {
             },
         ],
     },
-
-    plugins: [],
 };
-
-if (build) {
-    module.exports.plugins.push(
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: JSON.stringify('production'),
-            },
-        }),
-    );
-    module.exports.plugins.push(
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                unsafe: true,
-                warnings: false,
-            },
-            sourceMap: true,
-        }),
-    );
-}
