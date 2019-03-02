@@ -54,7 +54,7 @@ ReactDOM.render(<DemoApp />, document.getElementById('app-container'));
 
 ### Button
 
-[!Buttons visual](https://github.com/joinposter/poster-ui-kit/blob/master/example/img/buttons.png?raw=true)
+![Buttons visual](https://github.com/joinposter/poster-ui-kit/blob/master/example/img/buttons.png?raw=true)
 
 
 ```jsx harmony
@@ -64,7 +64,7 @@ ReactDOM.render(<DemoApp />, document.getElementById('app-container'));
 
 ### Spinner
 
-[!Spinner visual](https://github.com/joinposter/poster-ui-kit/blob/master/example/img/spinner.png?raw=true)
+![Spinner visual](https://github.com/joinposter/poster-ui-kit/blob/master/example/img/spinner.png?raw=true)
 
 
 ```jsx harmony
