@@ -33,6 +33,11 @@ html, body {
         &:disabled {
             background: #BEBEBE;
         }
+
+        &.p-input-blocked {
+            background: @color-light-green;
+            cursor: default;
+        }
     }
 
     .p-btn-outline {
@@ -53,6 +58,11 @@ html, body {
             color: #C0C0C0;
             border-color: #C0C0C0;
             background: @color-white;
+        }
+
+        &.p-input-blocked {
+            background: @color-white;
+            cursor: default;
         }
     }
 }

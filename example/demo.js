@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import PosterUiKit from 'poster-ui-kit';
+// import PosterUiKit from '../dist/bundle.min';
 
 
 function DemoApp() {
@@ -16,6 +17,13 @@ function DemoApp() {
             <PosterUiKit.Button outline onClick={() => alert('Outline button have been clicked')}>
                 Outline Button
             </PosterUiKit.Button>
+
+            <hr />
+
+            <PosterUiKit.Button inputBlocked>
+                Blocked State
+            </PosterUiKit.Button>
+
 
             <hr />
 
