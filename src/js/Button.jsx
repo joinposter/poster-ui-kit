@@ -16,7 +16,7 @@ const Button = (props) => {
 
     return (
         <button
-            className={`p-btn ${outline ? 'p-btn-outline' : ''} ${className} ${inputBlocked ? 'p-input-blocked' : ''}`}
+            className={`p-font-normal p-btn ${outline ? 'p-btn-outline' : ''} ${className} ${inputBlocked ? 'p-input-blocked' : ''}`}
             {...otherProps}
         >
             {children}

@@ -1,0 +1,36 @@
+@import "colors";
+
+.p-segment-radio {
+    margin: 0px;
+
+    border: 1px solid @color-blue-white-darken;
+
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 4px;
+
+    label {
+        display: block;
+        height: 36px;
+        margin: 0;
+        padding: 0 20px;
+
+        float: left;
+        border-right: 1px solid @color-blue-white-darken;
+        color: @color-blue;
+        line-height: 36px;
+        cursor: pointer;
+
+        input {
+            display: none;
+        }
+    }
+
+    :last-child {
+        border-right: 0px;
+    }
+
+    .p-segment-label-active {
+        background: @color-blue-white-lighter;
+    }
+}

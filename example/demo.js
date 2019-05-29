@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import PosterUiKit from 'poster-ui-kit';
-// import PosterUiKit from '../dist/bundle.min';
+// import PosterUiKit from 'poster-ui-kit';
+import PosterUiKit from '../src/build';
 
 
 function DemoApp() {
@@ -21,13 +21,23 @@ function DemoApp() {
             <hr />
 
             <PosterUiKit.Button inputBlocked>
-                Blocked State
+                Blocked Button
             </PosterUiKit.Button>
-
 
             <hr />
 
             <PosterUiKit.Spinner />
+
+            <hr />
+
+            <PosterUiKit.SegmentRadio
+                value="1"
+                segments={[
+                    { title: 'Option 1', name: 'option', value: '1' },
+                    { title: 'Option 2', name: 'option', value: '2' },
+                    { title: 'Option 3', name: 'option', value: '3' },
+                ]}
+            />
         </div>
     );
 }
