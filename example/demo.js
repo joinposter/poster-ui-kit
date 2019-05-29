@@ -8,19 +8,15 @@ import PosterUiKit from '../src/build';
 function DemoApp() {
     return (
         <div>
-            <PosterUiKit.Button onClick={() => alert('Regular button clicked')}>
+            <PosterUiKit.Button className="ib m-r-15" onClick={() => alert('Regular button clicked')}>
                 Regular Button
             </PosterUiKit.Button>
 
-            <hr />
-
-            <PosterUiKit.Button outline onClick={() => alert('Outline button have been clicked')}>
+            <PosterUiKit.Button className="ib m-r-15" outline onClick={() => alert('Outline button have been clicked')}>
                 Outline Button
             </PosterUiKit.Button>
 
-            <hr />
-
-            <PosterUiKit.Button inputBlocked>
+            <PosterUiKit.Button className="ib m-r-15" inputBlocked>
                 Blocked Button
             </PosterUiKit.Button>
 
