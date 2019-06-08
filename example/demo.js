@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// import PosterUiKit from 'poster-ui-kit';
-import PosterUiKit from '../src/build';
+// import PosterUiKit from '../dist/bundle.min'; // npm run build & Uncomment to test build
+import PosterUiKit from '../src/build'; // npm run dev & Uncomment for real testing
 
 
 function DemoApp() {
@@ -34,6 +34,13 @@ function DemoApp() {
                     { title: 'Option 3', name: 'option', value: '3' },
                 ]}
             />
+
+            <hr />
+
+            <div>
+                I am a toggle
+                <PosterUiKit.Toggle className="ib m-l-10" />
+            </div>
         </div>
     );
 }

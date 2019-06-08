@@ -41,7 +41,13 @@ module.exports = {
             4
         ],
         "react/jsx-no-bind": 0,
-        "jsx-a11y/label-has-for": false,
+        "jsx-a11y/label-has-for": [ 2, {
+            "components": [ "Label" ],
+            "required": {
+                "every": [ "id" ]
+            },
+            "allowChildren": true
+        }],
         "jsx-a11y/click-events-have-key-events": false,
         "jsx-a11y/no-noninteractive-element-interactions": false,
         "jsx-a11y/no-static-element-interactions": false,

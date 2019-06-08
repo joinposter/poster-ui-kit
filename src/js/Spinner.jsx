@@ -1,3 +1,6 @@
+/** @module */
+
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -31,7 +34,7 @@ Spinner.defaultProps = {
 
 Spinner.propTypes = {
     className: PropTypes.string,
-    color: PropTypes.oneOf(['white, gray']),
+    color: PropTypes.oneOf(['white', 'gray']),
 };
 
 export default Spinner;

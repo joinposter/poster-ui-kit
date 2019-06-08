@@ -1,7 +1,13 @@
+/** @module */
+
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
 
+/**
+ * Segmented select
+ */
 export default class SegmentRadio extends React.Component {
     static propTypes = {
         value: PropTypes.string.isRequired,
