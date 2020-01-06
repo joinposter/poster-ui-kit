@@ -2,8 +2,7 @@
 
 React library with Poster's interface components. 
 
-[🎮 Try out live version](https://codesandbox.io/s/j1qvxx0m5?fontsize=14) 
-
+[🎮 Try out the live version](https://codesandbox.io/s/j1qvxx0m5?fontsize=14) 
 
 
 ## Getting Started
@@ -70,4 +69,7 @@ ReactDOM.render(<DemoApp />, document.getElementById('app-container'));
 ```jsx harmony
 <PosterUiKit.Spinner>Press me</PosterUiKit.Spinner>
 ```
+
+
+## Contribution
 
