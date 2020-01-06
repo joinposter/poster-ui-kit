@@ -6,8 +6,6 @@ import PosterUiKit from 'poster-ui-kit';
 function DemoApp() {
     return (
         <div>
-            <h1>This is a demo of all controls</h1>
-
             <PosterUiKit.Button className="ib m-r-15" onClick={() => alert('Regular button clicked')}>
                 Regular Button
             </PosterUiKit.Button>
