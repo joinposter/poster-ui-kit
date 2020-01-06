@@ -2,7 +2,7 @@
 
 React library with Poster's interface components. 
 
-[🎮 Try out the live version](https://codesandbox.io/s/j1qvxx0m5?fontsize=14) 
+[🎮 Try out the live version](https://codesandbox.io/s/github/joinposter/poster-ui-kit/tree/master/example) 
 
 
 ## Getting Started
