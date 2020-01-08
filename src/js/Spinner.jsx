@@ -1,9 +1,7 @@
 /** @module */
 
-
 import React from 'react';
 import PropTypes from 'prop-types';
-
 
 /**
  * Preloader
@@ -13,7 +11,9 @@ import PropTypes from 'prop-types';
  * @constructor
  */
 const Spinner = (props) => {
-    const { className, color, ...otherProps } = props;
+    const {
+        className, color, small, ...otherProps
+    } = props;
     const blades = [];
 
     for (let i = 0; i < 12; i += 1) {
@@ -21,20 +21,22 @@ const Spinner = (props) => {
     }
 
     return (
-        <div className={`p-spinner ${color} animating ${className}`} {...otherProps}>
+        <div className={`p-spinner ${color} animating ${className} ${small ? 'small' : ''}`} {...otherProps}>
             {blades.map(item => <div key={item} className="p-spinner-blade" />)}
         </div>
     );
 };
 
-Spinner.defaultProps = {
-    className: '',
-    color: 'gray',
-};
-
 Spinner.propTypes = {
     className: PropTypes.string,
     color: PropTypes.oneOf(['white', 'gray']),
+    small: PropTypes.bool,
+};
+
+Spinner.defaultProps = {
+    className: '',
+    color: 'gray',
+    small: false,
 };
 
 export default Spinner;

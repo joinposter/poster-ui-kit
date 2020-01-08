@@ -1,0 +1,105 @@
+.p-page-header {
+    padding: 16px 30px 15px 25px;
+    vertical-align: middle;
+
+    max-height: 64px;
+
+    border-bottom: 1px solid #EEEEEE;
+
+    .btn-back {
+        display: inline-block;
+
+        margin: -13px 4px -12px -10px;
+        padding: 0;
+
+        width: 40px;
+        height: 40px;
+
+        border-radius: 50%;
+        transition: background 0.2s;
+        cursor: pointer;
+        vertical-align: middle;
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.03);
+        }
+
+        &:active {
+            background: rgba(0, 0, 0, 0.05);;
+        }
+
+        svg, img {
+            margin: 11px 13px;
+            display: block;
+        }
+    }
+
+    h2 {
+        position: relative;
+
+        margin: 0;
+
+        height: 32px;
+
+        font-weight: bold;
+        font-size: 24px;
+        text-align: left;
+        line-height: 32px;
+
+        .quantity {
+            display: inline-block;
+
+            margin-left: 4px;
+            margin-bottom: 2px;
+
+            color: #999;
+
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 32px;
+            vertical-align: middle;
+        }
+    }
+
+    .page-tabs {
+        display: inline-block;
+        margin: 0 0 0 20px;
+        padding: 0;
+
+        vertical-align: middle;
+
+        li {
+            display: inline-block;
+            margin-left: 12px;
+            cursor: pointer;
+
+            padding: 6px 14px;
+
+            border: none;
+            border-radius: 4px;
+            color: #438DE2;
+            background-color: transparent;
+            text-decoration: none;
+
+            line-height: 20px;
+
+            a {
+                color: #2688cd;
+                text-decoration: none;
+                font-weight: 400;
+                letter-spacing: normal;
+            }
+
+            &:hover, a:hover, &:active, a:active {
+                border: none;
+                opacity: 0.8;
+                text-decoration: none;
+            }
+
+            &.active {
+                background-color: #EFF6FF;
+            }
+        }
+    }
+}
+

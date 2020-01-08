@@ -20,7 +20,7 @@ module.exports = {
         }
         // Entry point for demo app
         : {
-            './dist/demo.js': './example/demo.js',
+            './dist/demo.js': './example/src/index.js',
         },
 
     mode: build ? 'production' : 'development',
