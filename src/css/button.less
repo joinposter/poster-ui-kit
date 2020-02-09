@@ -1,6 +1,5 @@
 @import "./colors";
 
-
 html, body {
     .p-btn {
         height: 36px;
@@ -11,7 +10,7 @@ html, body {
 
         font-weight: 500;
         color: @color-white;
-        background: @color-green;
+        background: @color-unclaimed-green-1;
 
         border: 0px;
         border-radius: 3px;
@@ -19,11 +18,11 @@ html, body {
         transition: background-color 0.1s ease-out;
 
         &:hover {
-            background: @color-green-lighter;
+            background: @color-unclaimed-green-2;
         }
 
         &:active {
-            background: @color-green-darker;
+            background: @color-unclaimed-green-3;
         }
 
         &:disabled {
@@ -31,23 +30,23 @@ html, body {
         }
 
         &.p-input-blocked {
-            background: @color-light-green;
+            background: @color-unclaimed-green-4;
             cursor: default;
         }
     }
 
     .p-btn-outline {
-        border: 1px solid @color-green;
-        color: @color-green;
+        border: 1px solid @color-unclaimed-green-1;
+        color: @color-unclaimed-green-1;
 
         background-color: @color-white;
 
         &:hover {
-            background: @color-white-green-lighter;
+            background: @color-unclaimed-green-6;
         }
 
         &:active {
-            background: @color-white-green-darker;
+            background: @color-unclaimed-green-5;
         }
 
         &:disabled {

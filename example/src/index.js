@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// import PosterUiKit from '../../dist/bundle.min'; // npm run build & Uncomment to test build
-// import PosterUiKit from '../../src/build'; // npm run dev & Uncomment for real-time testing
+// import PosterUiKit from '../../dist/bundle.min'; // npm run build // Uncomment to test a build
+// import PosterUiKit from '../../src/build'; // npm run dev // Uncomment for real-time testing
 import PosterUiKit from 'poster-ui-kit';
 
 function DemoApp() {
@@ -20,6 +20,10 @@ function DemoApp() {
             <div style={{ padding: 20 }}>
                 <PosterUiKit.Button className="ib m-r-15" onClick={() => alert('Regular button clicked')}>
                     Regular Button
+                </PosterUiKit.Button>
+
+                <PosterUiKit.Button className="ib p-m-r-16" inProgress>
+                    In Progress
                 </PosterUiKit.Button>
 
                 <PosterUiKit.Button className="ib m-r-15" outline onClick={() => alert('Outline button have been clicked')}>
@@ -50,7 +54,17 @@ function DemoApp() {
                 <div>
                     I am a toggle <PosterUiKit.Toggle className="ib m-l-10" />
                 </div>
+
+                <hr />
+
+                <PosterUiKit.Tooltip>
+                    Helpful tip here
+                </PosterUiKit.Tooltip>
+
+                <hr />
             </div>
+
+            <PosterUiKit.Submit buttonText="Save" onClick={(e, next) => setTimeout(next, 1000)} />
         </div>
     );
 }

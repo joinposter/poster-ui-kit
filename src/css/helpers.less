@@ -3,4 +3,40 @@ html body {
         display: inline-block;
         vertical-align: middle;
     }
+
+    @sizes: 4, 8, 12, 16, 20, 24, 32, 48, 64, 96, 128;
+
+    each(@sizes, {
+        .p-m-t-@{value} {
+            margin-top: ~"@{value}px";
+        }
+
+        .p-m-r-@{value} {
+            margin-right: ~"@{value}px";
+        }
+
+        .p-m-b-@{value} {
+            margin-bottom: ~"@{value}px";
+        }
+
+        .p-m-l-@{value} {
+            margin-left: ~"@{value}px";
+        }
+
+        .p-p-t-@{value} {
+            padding-top: ~"@{value}px";
+        }
+
+        .p-p-r-@{value} {
+            padding-right: ~"@{value}px";
+        }
+
+        .p-p-b-@{value} {
+            padding-bottom: ~"@{value}px";
+        }
+
+        .p-p-l-@{value} {
+            padding-left: ~"@{value}px";
+        }
+    });
 }

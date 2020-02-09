@@ -5,6 +5,8 @@ import Spinner from './js/Spinner';
 import SegmentRadio from './js/SegmentRadio';
 import Toggle from './js/Toggle';
 import PageHeader from './js/PageHeader';
+import Tooltip from './js/Tooltip';
+import Submit from './js/Submit';
 
 
 // For exporting All components
@@ -14,6 +16,8 @@ const PosterUiKit = {
     SegmentRadio,
     Toggle,
     PageHeader,
+    Tooltip,
+    Submit,
 };
 
 
@@ -24,6 +28,8 @@ export {
     SegmentRadio,
     Toggle,
     PageHeader,
+    Tooltip,
+    Submit,
 };
 
 export default PosterUiKit;
