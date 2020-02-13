@@ -6,8 +6,9 @@ import Button from './Button';
 
 export default class Submit extends React.Component {
     static propTypes = {
+        className: PropTypes.string,
         buttonText: PropTypes.string.isRequired,
-        buttonProps: PropTypes.object,
+        buttonProps: Button.propTypes,
         onClick: PropTypes.func,
         children: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.node),
@@ -16,7 +17,8 @@ export default class Submit extends React.Component {
     };
 
     static defaultProps = {
-        buttonProps: {},
+        className: '',
+        buttonProps: Button.defaultProps,
         onClick: () => {
         },
         children: null,
@@ -46,7 +48,9 @@ export default class Submit extends React.Component {
     };
 
     render() {
-        const { children, buttonText, buttonProps } = this.props;
+        const {
+            children, buttonText, buttonProps, className, ...otherProps
+        } = this.props;
         const { isSending } = this.state;
 
         const {
@@ -54,7 +58,7 @@ export default class Submit extends React.Component {
         } = buttonProps;
 
         return (
-            <div className="p-submit fixed">
+            <div className={`p-submit fixed ${className}`} {...otherProps}>
                 <Button
                     inputBlocked={isSending || inputBlocked}
                     inProgress={isSending || inProgress}
