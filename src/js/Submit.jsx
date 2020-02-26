@@ -49,7 +49,7 @@ export default class Submit extends React.Component {
 
     render() {
         const {
-            children, buttonText, buttonProps, className, ...otherProps
+            children, buttonText, buttonProps, className, onClick: divOnClick, ...otherProps
         } = this.props;
         const { isSending } = this.state;
 
