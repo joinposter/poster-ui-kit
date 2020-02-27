@@ -11,6 +11,7 @@ import PropTypes from 'prop-types';
 export default class SegmentRadio extends React.Component {
     static propTypes = {
         value: PropTypes.string.isRequired,
+        publicSet: PropTypes.bool,
         onChange: PropTypes.func,
         segments: PropTypes.arrayOf(
             PropTypes.shape({
@@ -22,6 +23,7 @@ export default class SegmentRadio extends React.Component {
     };
 
     static defaultProps = {
+        publicSet: false,
         onChange: () => ({}),
     };
 
@@ -30,6 +32,7 @@ export default class SegmentRadio extends React.Component {
 
         this.state = {
             selectedValue: props.value,
+            publicSet: props.publicSet,
         };
     }
 
@@ -38,10 +41,19 @@ export default class SegmentRadio extends React.Component {
 
         if (e.target.checked) {
             this.setState({ selectedValue: e.target.value });
-
             onChange({ value: e.target.value, name: e.target.name, e });
         }
     };
+
+    static getDerivedStateFromProps(props, state) {
+        if (state.publicSet && props.value !== state.selectedValue) {
+            return {
+                selectedValue: props.value,
+                publicSet: state.publicSet,
+            };
+        }
+        return null;
+    }
 
     render() {
         const { selectedValue } = this.state;
