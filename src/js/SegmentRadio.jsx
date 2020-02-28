@@ -47,9 +47,11 @@ export default class SegmentRadio extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         const { publicSet, selectedValue } = this.state;
+
         if (publicSet) {
             // если контрол в режиме внешнего управления - оно в приоритете
             // предполагается, что параметр будет меняться в state родителя по onChange
+            // в случае внешней инициативы - onChange не запускается
             if ( nextProps.value !== selectedValue ) {
                 this.setState({ selectedValue: nextProps.value });
             }
