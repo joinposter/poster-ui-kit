@@ -9,6 +9,10 @@
     overflow: hidden;
     border-radius: 4px;
 
+    &.p-segment-radio-disabled {
+        border-color: @color-disabled-gray-border;
+    }
+
     label {
         display: block;
         height: 36px;
@@ -30,7 +34,19 @@
         border-right: 0px;
     }
 
-    .p-segment-label-active {
-        background: @color-blue-white-lighter;
+    .p-segment-label {
+        &-active {
+            background: @color-blue-white-lighter;
+
+            &.p-segment-label-disabled {
+                background: @color-unclaimed-gray-1;
+            }
+        }
+
+        &-disabled {
+            border-color: @color-disabled-gray-border;
+            color: @color-disabled-gray-text;
+            cursor: default;
+        }
     }
 }
