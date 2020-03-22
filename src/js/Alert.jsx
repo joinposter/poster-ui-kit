@@ -7,7 +7,7 @@ const Alert = (props) => {
     const hasCloseBtn = Boolean(onClose);
 
     return (
-        <div className={` p-alert p-alert-${type} ${hasCloseBtn ? 'dismissable' : ''} scroll-top`}>
+        <div className={`p-alert p-alert-${type} ${hasCloseBtn ? 'dismissable' : ''} scroll-top`}>
             {children}
             {Boolean(onClose) && (<button type="button" className="close" aria-hidden="true" onClick={onClose}>×</button>)}
         </div>

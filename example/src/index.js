@@ -17,7 +17,7 @@ function DemoApp() {
                 ]}
             />
 
-            <div style={{ padding: 20 }}>
+            <div style={{ padding: '20px 30px 80px 30px' }}>
                 <PosterUiKit.Button className="ib m-r-15" onClick={() => alert('Regular button clicked')}>
                     Regular Button
                 </PosterUiKit.Button>
@@ -72,9 +72,21 @@ function DemoApp() {
 
                 <PosterUiKit.Alert>Data saved!</PosterUiKit.Alert>
 
-                <PosterUiKit.Alert onClose={() => {}}>
+                <PosterUiKit.Alert onClose={() => ({})}>
                     Data saved!
                 </PosterUiKit.Alert>
+
+                <hr />
+
+                <div style={{ maxWidth: 600 }}>
+                    <PosterUiKit.FormGroup label="Input label">
+                        <input type="text" id="input-id" placeholder="Your text here" />
+                    </PosterUiKit.FormGroup>
+
+                    <PosterUiKit.FormGroup label="Input with error" error="Error message">
+                        <input type="text" id="input-error" placeholder="Your text here" />
+                    </PosterUiKit.FormGroup>
+                </div>
             </div>
 
             <PosterUiKit.Submit buttonText="Save" onClick={(e, next) => setTimeout(next, 1000)} />
