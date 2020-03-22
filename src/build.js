@@ -7,6 +7,7 @@ import Toggle from './js/Toggle';
 import PageHeader from './js/PageHeader';
 import Tooltip from './js/Tooltip';
 import Submit from './js/Submit';
+import BlockTitle from './js/BlockTitle';
 
 
 // For exporting All components
@@ -18,6 +19,7 @@ const PosterUiKit = {
     PageHeader,
     Tooltip,
     Submit,
+    BlockTitle,
 };
 
 
@@ -30,6 +32,7 @@ export {
     PageHeader,
     Tooltip,
     Submit,
+    BlockTitle,
 };
 
 export default PosterUiKit;

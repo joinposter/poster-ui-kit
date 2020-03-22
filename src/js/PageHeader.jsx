@@ -27,7 +27,7 @@ const PageHeader = (props) => {
             <ul className="page-tabs">
                 {pages.map(page => (
                     <li key={page.url + page.name} className={` ${page.active ? 'active' : ''}`}>
-                        <a href={page.url}>{page.name}</a>
+                        <a onClick={page.onClick} href={page.url}>{page.name}</a>
                     </li>
                 ))}
             </ul>
@@ -47,6 +47,7 @@ PageHeader.propTypes = {
         url: PropTypes.string,
         active: PropTypes.bool,
         name: PropTypes.string,
+        onClick: PropTypes.func,
     })),
 
 };

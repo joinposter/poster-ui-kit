@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // import PosterUiKit from '../../dist/bundle.min'; // npm run build // Uncomment to test a build
-// import PosterUiKit from '../../src/build'; // npm run dev // Uncomment for real-time testing
+// import PosterUiKit from '../../src/build';
 import PosterUiKit from 'poster-ui-kit';
 
 function DemoApp() {
@@ -47,6 +47,13 @@ function DemoApp() {
                         { title: 'Option 2', name: 'option', value: '2' },
                         { title: 'Option 3', name: 'option', value: '3' },
                     ]}
+                />
+
+                <hr />
+
+                <PosterUiKit.BlockTitle
+                    title="New block starts here"
+                    hint="And of some a handful tip here"
                 />
 
                 <hr />

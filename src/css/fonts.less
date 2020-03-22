@@ -1,4 +1,4 @@
-html body .p-font-normal {
+.p-font-normal {
     line-height: 1;
     letter-spacing: 0.03em;
     font-weight: normal;
@@ -6,4 +6,34 @@ html body .p-font-normal {
     -webkit-font-smoothing: antialiased;
 
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333333;
+}
+
+.p-font-h3 {
+    .p-font-normal();
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.p-font-hint {
+    .p-font-normal();
+
+    color: #666666;
+    line-height: 22px;
+}
+
+html body {
+    .p-font-normal {
+        .p-font-normal();
+    }
+
+    .p-font-h3 {
+        .p-font-h3();
+    }
+
+    .p-font-hint {
+        .p-font-hint();
+    }
 }
