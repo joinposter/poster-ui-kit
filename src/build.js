@@ -8,6 +8,7 @@ import PageHeader from './js/PageHeader';
 import Tooltip from './js/Tooltip';
 import Submit from './js/Submit';
 import Alert from './js/Alert';
+import BlockTitle from './js/BlockTitle';
 
 
 // For exporting All components
@@ -20,6 +21,7 @@ const PosterUiKit = {
     Tooltip,
     Submit,
     Alert,
+    BlockTitle,
 };
 
 
@@ -33,6 +35,7 @@ export {
     Tooltip,
     Submit,
     Alert,
+    BlockTitle,
 };
 
 export default PosterUiKit;

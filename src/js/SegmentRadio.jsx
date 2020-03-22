@@ -11,6 +11,7 @@ import PropTypes from 'prop-types';
 export default class SegmentRadio extends React.Component {
     static propTypes = {
         value: PropTypes.string.isRequired,
+        publicSet: PropTypes.bool,
         onChange: PropTypes.func,
         segments: PropTypes.arrayOf(
             PropTypes.shape({
@@ -23,6 +24,7 @@ export default class SegmentRadio extends React.Component {
 
     static defaultProps = {
         onChange: () => ({}),
+        publicSet: false,
     };
 
     constructor(props) {
@@ -30,6 +32,7 @@ export default class SegmentRadio extends React.Component {
 
         this.state = {
             selectedValue: props.value,
+            publicSet: props.publicSet,
         };
     }
 
@@ -38,10 +41,22 @@ export default class SegmentRadio extends React.Component {
 
         if (e.target.checked) {
             this.setState({ selectedValue: e.target.value });
-
             onChange({ value: e.target.value, name: e.target.name, e });
         }
     };
+
+    componentWillReceiveProps(nextProps) {
+        const { publicSet, selectedValue } = this.state;
+
+        if (publicSet) {
+            // если контрол в режиме внешнего управления - оно в приоритете
+            // предполагается, что параметр будет меняться в state родителя по onChange
+            // в случае внешней инициативы - onChange не запускается
+            if ( nextProps.value !== selectedValue ) {
+                this.setState({ selectedValue: nextProps.value });
+            }
+        }
+    }
 
     render() {
         const { selectedValue } = this.state;
@@ -50,19 +65,17 @@ export default class SegmentRadio extends React.Component {
         return (
             <div className="p-font-normal p-segment-radio">
                 {segments.map((segment, i) => {
-                    const {
-                        name, id, value, ...otherProps
-                    } = segment;
-
+                    const { name, id, ...otherProps } = segment;
+                    const inputValue = segment.value;
                     return (
-                        <label htmlFor={id || i} key={id || i} className={selectedValue === value ? 'p-segment-label-active' : ''}>
+                        <label htmlFor={id || i} key={id || i} className={selectedValue === inputValue ? 'p-segment-label-active' : ''}>
                             {segment.title}
                             <input
                                 type="radio"
                                 id={id || i}
                                 name={name}
-                                value={value}
-                                checked={selectedValue === value}
+                                value={inputValue}
+                                checked={selectedValue === inputValue}
                                 onChange={this.onChangeValue}
                                 {...otherProps}
                             />

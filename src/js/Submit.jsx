@@ -8,7 +8,7 @@ export default class Submit extends React.Component {
     static propTypes = {
         className: PropTypes.string,
         buttonText: PropTypes.string.isRequired,
-        buttonProps: Button.propTypes,
+        buttonProps: PropTypes.shape(Button.propTypes),
         onClick: PropTypes.func,
         children: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.node),
@@ -49,7 +49,7 @@ export default class Submit extends React.Component {
 
     render() {
         const {
-            children, buttonText, buttonProps, className, ...otherProps
+            children, buttonText, buttonProps, className, onClick: divOnClick, ...otherProps
         } = this.props;
         const { isSending } = this.state;
 

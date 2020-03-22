@@ -20,7 +20,7 @@ const Button = (props) => {
 
     return (
         <button
-            className={`p-font-normal p-btn ${outline ? 'p-btn-outline' : ''} ${className} ${inputBlocked ? 'p-input-blocked' : ''}`}
+            className={`p-btn ${outline ? 'p-btn-outline' : ''} ${className} ${inputBlocked ? 'p-input-blocked' : ''}`}
             {...otherProps}
         >
             {inProgress && (<Spinner small className="p-ib p-m-r-8" color={outline ? 'gray' : 'white'} />)}
@@ -34,13 +34,14 @@ Button.defaultProps = {
     outline: false,
     className: '',
     inputBlocked: false,
+    children: '',
 };
 
 Button.propTypes = {
     inProgress: PropTypes.bool,
     outline: PropTypes.bool,
     className: PropTypes.string,
-    children: PropTypes.any.isRequired,
+    children: PropTypes.any,
     inputBlocked: PropTypes.bool,
 };
 
