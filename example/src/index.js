@@ -51,8 +51,6 @@ function DemoApp() {
                     ]}
                 />
 
-                <hr />
-
                 <p>Disabled 1,2, selected 1:</p>
                 <br />
                 <PosterUiKit.SegmentRadio
@@ -65,8 +63,6 @@ function DemoApp() {
                     ]}
                 />
 
-                <hr />
-
                 <p>Disabled control, selected 1:</p>
                 <br />
                 <PosterUiKit.SegmentRadio
@@ -78,8 +74,6 @@ function DemoApp() {
                         { title: 'Option 3.3', name: 'option3', value: '3' },
                     ]}
                 />
-
-                <hr />
 
                 <p>Enabled control, disabled all segments, selected 1:</p>
                 <br />

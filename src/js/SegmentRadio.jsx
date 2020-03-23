@@ -84,12 +84,11 @@ export default class SegmentRadio extends React.Component {
                     segmentClass += disabledSegment ? 'p-segment-label-disabled ' : '';
 
                     return (
-                        <label htmlFor={`${id || i}${name}`} key={`${id || i}${name}`} className={segmentClass}>
+                        <label htmlFor={id} key={`${id}-${i}-${name}`} className={segmentClass}>
                             {segment.title}
                             <input
                                 type="radio"
-                                id={`${id || i}${name}`}
-                                key={`${id || i}${name}`}
+                                id={id}
                                 name={name}
                                 value={inputValue}
                                 disabled={disabledSegment}
