@@ -89,7 +89,19 @@ function DemoApp() {
                 </div>
             </div>
 
-            <PosterUiKit.Submit buttonText="Save" onClick={(e, next) => setTimeout(next, 1000)} />
+            {/*<PosterUiKit.Submit buttonText="Save" onClick={(e, next) => setTimeout(next, 1000)} />*/}
+
+            <hr />
+
+            <div>
+                Blocked submit:
+                <PosterUiKit.Submit
+                    buttonText="I am blocked"
+                    onClick={(e, next) => { alert('Forbidden Action mthfck!'); setTimeout(next, 1000); }}
+                    buttonProps={{ inputBlocked: true }}
+                />
+            </div>
+
         </div>
     );
 }

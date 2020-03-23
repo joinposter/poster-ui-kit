@@ -32,10 +32,10 @@ export default class Submit extends React.Component {
     }
 
     onSubmit = (e) => {
-        const { onClick } = this.props;
+        const { buttonProps, onClick } = this.props;
         const { isSending } = this.state;
 
-        if (isSending) {
+        if (isSending || buttonProps.inputBlocked) {
             e.preventDefault();
             e.stopPropagation();
 
