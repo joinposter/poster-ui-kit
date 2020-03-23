@@ -40,12 +40,49 @@ function DemoApp() {
 
                 <hr />
 
+                <p>Enabled all, selected 1:</p>
+                <br />
                 <PosterUiKit.SegmentRadio
                     value="1"
                     segments={[
-                        { title: 'Option 1', name: 'option', value: '1' },
-                        { title: 'Option 2', name: 'option', value: '2' },
-                        { title: 'Option 3', name: 'option', value: '3' },
+                        { title: 'Option 1.1', name: 'option1', value: '1' },
+                        { title: 'Option 1.2', name: 'option1', value: '2' },
+                        { title: 'Option 1.3', name: 'option1', value: '3' },
+                    ]}
+                />
+
+                <p>Disabled 1,2, selected 1:</p>
+                <br />
+                <PosterUiKit.SegmentRadio
+                    value="1"
+                    segments={[
+                        { title: 'Option 2.1', name: 'option2', value: '1', disabled: true },
+                        { title: 'Option 2.2', name: 'option2', value: '2', disabled: true },
+                        { title: 'Option 2.3', name: 'option2', value: '3' },
+                        { title: 'Option 2.4', name: 'option2', value: '4' },
+                    ]}
+                />
+
+                <p>Disabled control, selected 1:</p>
+                <br />
+                <PosterUiKit.SegmentRadio
+                    value="1"
+                    disabled
+                    segments={[
+                        { title: 'Option 3.1', name: 'option3', value: '1' },
+                        { title: 'Option 3.2', name: 'option3', value: '2' },
+                        { title: 'Option 3.3', name: 'option3', value: '3' },
+                    ]}
+                />
+
+                <p>Enabled control, disabled all segments, selected 1:</p>
+                <br />
+                <PosterUiKit.SegmentRadio
+                    value="1"
+                    segments={[
+                        { title: 'Option 3.1', name: 'option3', value: '1', disabled: true },
+                        { title: 'Option 3.2', name: 'option3', value: '2', disabled: true },
+                        { title: 'Option 3.3', name: 'option3', value: '3', disabled: true },
                     ]}
                 />
 
