@@ -1,10 +1,10 @@
+@sizes: 4, 8, 12, 16, 20, 24, 32, 48, 64, 96, 128;
+
 html body {
     .p-ib {
         display: inline-block;
         vertical-align: middle;
     }
-
-    @sizes: 4, 8, 12, 16, 20, 24, 32, 48, 64, 96, 128;
 
     each(@sizes, {
         .p-m-t-@{value} {

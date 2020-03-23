@@ -1,0 +1,79 @@
+@import "colors";
+@import "fonts";
+@import "helpers";
+
+.p-form-group {
+    .p-font-normal();
+
+    &::after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+
+    width: 100%;
+    margin-bottom: 16px;
+
+    &.has-error {
+        .p-control-wrapper {
+            input, textarea, select {
+                border-color: @color-system-red;
+
+                &:active, &:focus {
+                    border-color: @color-system-red;
+                }
+            }
+        }
+
+        .error-msg {
+            display: block;
+            color: @color-system-red;
+            margin-top: 5px;
+            font-size: 13px;
+        }
+    }
+
+    .p-control-label {
+        font-size: 14px;
+        font-weight: 400;
+        min-height: 37px;
+        line-height: 34px;
+
+        width: 30%;
+        float: left;
+    }
+
+    .p-control-wrapper {
+        width: 70%;
+        float: right;
+
+        input, textarea, select {
+            position: relative;
+            padding: 8px 11px;
+            margin: 0;
+
+            width: 100%;
+            height: auto;
+            min-height: 37px;
+
+            line-height: 20px;
+            border: 1px solid @color-system-black-7;
+
+            box-shadow: none;
+            font-size: 14px;
+            color: @color-system-black;
+            transition: border .4s ease-out;
+            -webkit-appearance: none;
+            box-sizing: border-box;
+
+            outline: none;
+
+            border-radius: 4px;
+
+            &:focus, &:active {
+                box-shadow: none;
+                border: 1px solid @color-system-blue-5;
+            }
+        }
+    }
+}
