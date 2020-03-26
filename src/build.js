@@ -10,6 +10,7 @@ import Submit from './js/Submit';
 import Alert from './js/Alert';
 import BlockTitle from './js/BlockTitle';
 import FormGroup from './js/FormGroup';
+import Bage from './js/Bage';
 
 
 // For exporting All components
@@ -24,6 +25,7 @@ const PosterUiKit = {
     Alert,
     BlockTitle,
     FormGroup,
+    Bage,
 };
 
 
@@ -39,6 +41,7 @@ export {
     Alert,
     BlockTitle,
     FormGroup,
+    Bage,
 };
 
 export default PosterUiKit;

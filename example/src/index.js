@@ -124,6 +124,14 @@ function DemoApp() {
                         <input type="text" id="input-error" placeholder="Your text here" />
                     </PosterUiKit.FormGroup>
                 </div>
+
+                <hr />
+
+                {['success', 'info', 'warning', 'danger', 'primary', 'default'].map(type => (
+                    <div className="p-m-b-12">
+                        <PosterUiKit.Bage text={type} type={type} />
+                    </div>
+                ))}
             </div>
 
             <PosterUiKit.Submit buttonText="Save" onClick={(e, next) => setTimeout(next, 1000)} />
