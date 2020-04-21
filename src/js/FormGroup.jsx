@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const FormGroup = (props) => {
     const {
-        children, error, id, label, className,
+        children, error, id, label, className, vertical,
     } = props;
 
     let htmlFor = id;
@@ -15,7 +15,7 @@ const FormGroup = (props) => {
     }
 
     return (
-        <div className={`p-form-group ${Boolean(error) && 'has-error'} ${className || ''}`}>
+        <div className={`p-form-group ${Boolean(error) && 'has-error'} ${className || ''} ${vertical && 'vertical'}`}>
             <label className="p-control-label" htmlFor={htmlFor}>
                 {label}
             </label>
@@ -33,6 +33,7 @@ FormGroup.defaultProps = {
     error: '',
     id: '',
     className: '',
+    vertical: false,
 };
 
 FormGroup.propTypes = {
@@ -41,6 +42,7 @@ FormGroup.propTypes = {
     error: PropTypes.string,
     id: PropTypes.string,
     className: PropTypes.string,
+    vertical: PropTypes.bool,
 };
 
 export default FormGroup;

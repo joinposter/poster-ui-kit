@@ -41,6 +41,9 @@
 
         width: 30%;
         float: left;
+        box-sizing: border-box;
+
+        .p-p-r-12();
     }
 
     .p-control-wrapper {
@@ -75,5 +78,21 @@
                 border: 1px solid @color-system-blue-5;
             }
         }
+    }
+}
+
+.p-form-group.vertical {
+    .p-control-label, .p-control-wrapper {
+        display: block;
+        width: auto;
+        float: none;
+    }
+
+    .p-control-label {
+        padding: 0;
+        line-height: 16px;
+        min-height: 16px;
+
+        .p-m-b-4();
     }
 }

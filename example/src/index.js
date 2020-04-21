@@ -123,6 +123,11 @@ function DemoApp() {
                     <PosterUiKit.FormGroup label="Input with error" error="Error message">
                         <input type="text" id="input-error" placeholder="Your text here" />
                     </PosterUiKit.FormGroup>
+
+                    <PosterUiKit.FormGroup label="Label above input" vertical>
+                        <input type="text" id="input-vertical" placeholder="Your text here" />
+                    </PosterUiKit.FormGroup>
+
                 </div>
 
                 <hr />
