@@ -128,6 +128,9 @@ function DemoApp() {
                         <input type="text" id="input-vertical" placeholder="Your text here" />
                     </PosterUiKit.FormGroup>
 
+                    <PosterUiKit.FormGroup label="Label above input" disableInputStyles>
+                        <input type="text" id="input-vertical" placeholder="Your text here" />
+                    </PosterUiKit.FormGroup>
                 </div>
 
                 <hr />

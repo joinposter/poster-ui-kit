@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const FormGroup = (props) => {
     const {
-        children, error, id, label, className, vertical,
+        children, error, id, label, className, vertical, disableInputStyles,
     } = props;
 
     let htmlFor = id;
@@ -19,7 +19,7 @@ const FormGroup = (props) => {
             <label className="p-control-label" htmlFor={htmlFor}>
                 {label}
             </label>
-            <div className="p-control-wrapper">
+            <div className={`p-control-wrapper ${disableInputStyles && 'disable-input-styles'}`}>
                 {children}
                 {Boolean(error) && <span className="error-msg">{error}</span>}
             </div>
@@ -34,6 +34,7 @@ FormGroup.defaultProps = {
     id: '',
     className: '',
     vertical: false,
+    disableInputStyles: false, // Sometimes we need to disable library styles for side libraries
 };
 
 FormGroup.propTypes = {
@@ -43,6 +44,7 @@ FormGroup.propTypes = {
     id: PropTypes.string,
     className: PropTypes.string,
     vertical: PropTypes.bool,
+    disableInputStyles: PropTypes.bool,
 };
 
 export default FormGroup;
