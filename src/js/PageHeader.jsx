@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import Spinner from './Spinner';
 
@@ -12,17 +13,19 @@ const PageHeader = (props) => {
     } = props;
 
     return (
-        <div className="p-page-header p-font-normal">
+        <div className={classNames('p-page-header', 'p-font-normal', { 'p-page-header-with-tabs': pages.length > 0 })}>
             {Boolean(backUrl) && (
                 <a href={backUrl} onClick={onBackClick} className="btn-back">
                     <img src={ArrowBack} alt="Back" />
                 </a>
             )}
 
-            <h2 className="p-ib">
-                {title}
+            <div className="p-page-header-title">
+                <h2 className="p-ib">
+                    {title}
+                </h2>
                 <span className="quantity">{loading ? <Spinner small /> : quantity}</span>
-            </h2>
+            </div>
 
             <ul className="page-tabs">
                 {pages.map(page => (

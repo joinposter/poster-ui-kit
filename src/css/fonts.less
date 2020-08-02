@@ -1,3 +1,5 @@
+@import "./colors";
+
 .p-font-normal {
     line-height: 1;
     letter-spacing: 0.03em;
@@ -6,7 +8,7 @@
     -webkit-font-smoothing: antialiased;
 
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333333;
+    color: @color-system-black;
 }
 
 .p-font-h3 {
@@ -20,7 +22,7 @@
 .p-font-hint {
     .p-font-normal();
 
-    color: #666666;
+    color: @color-system-black-5;
     line-height: 22px;
 }
 
