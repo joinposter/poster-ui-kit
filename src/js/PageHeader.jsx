@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 import Spinner from './Spinner';
 
@@ -12,8 +11,10 @@ const PageHeader = (props) => {
         title, backUrl, loading, quantity, pages, onBackClick,
     } = props;
 
+    const className = `p-page-header p-font-normal ${pages.length > 0 ? 'p-page-header-with-tabs' : ''}`;
+
     return (
-        <div className={classNames('p-page-header', 'p-font-normal', { 'p-page-header-with-tabs': pages.length > 0 })}>
+        <div className={className}>
             {Boolean(backUrl) && (
                 <a href={backUrl} onClick={onBackClick} className="btn-back">
                     <img src={ArrowBack} alt="Back" />
