@@ -1,12 +1,16 @@
 @import "./colors";
 
 .p-page-header {
-    padding: 16px 30px 15px 30px;
+    padding: 20px 24px 21px 24px;
     vertical-align: middle;
 
     max-height: 64px;
 
     border-bottom: 1px solid #EEEEEE;
+
+    &.p-page-header-with-tabs {
+        padding: 12px 24px 13px 24px;
+    }
 
     .btn-back {
         display: inline-block;
@@ -36,70 +40,85 @@
         }
     }
 
-    h2 {
-        position: relative;
+    .p-page-header-title {
+        display: inline-block;
 
-        margin: 0;
+        h2 {
+            position: relative;
 
-        height: 32px;
+            margin: 0;
 
-        font-weight: bold;
-        font-size: 24px;
-        text-align: left;
-        line-height: 32px;
+            height: 22px;
+
+            font-weight: 500;
+            font-size: 18px;
+            text-align: left;
+            line-height: 22px;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
         .quantity {
             display: inline-block;
-
-            margin-left: 4px;
-            margin-bottom: 2px;
-
-            color: #999;
-
+            font-size: 14px;
+            line-height: 18px;
             font-weight: normal;
-            font-size: 16px;
-            line-height: 32px;
-            vertical-align: middle;
+            color: @color-system-black-2;
+            margin-left: 15px;
+            vertical-align: bottom;
         }
     }
 
     .page-tabs {
         display: inline-block;
-        margin: 0 0 0 20px;
+        margin: 0 0 0 14px;
         padding: 0;
 
         vertical-align: middle;
 
         li {
             display: inline-block;
-            margin-left: 12px;
+            margin-left: 10px;
             cursor: pointer;
 
-            padding: 6px 14px;
+            padding: 11px 16px 10px 16px;
 
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             color: @color-blue;
             background-color: transparent;
             text-decoration: none;
 
-            line-height: 20px;
+            font-size: 13px;
+            line-height: 16px;
 
             a {
-                color: #2688cd;
+                color: @color-blue;
                 text-decoration: none;
-                font-weight: 400;
-                letter-spacing: normal;
+                font-weight: 500;
+                letter-spacing: 0.03em;
+            }
+
+            &:hover, &.active:hover {
+                background-color: @background-color-hover;
+            }
+
+            &:active {
+                background-color: @background-color-regular-on-pressed;
             }
 
             &:hover, a:hover, &:active, a:active {
                 border: none;
-                opacity: 0.8;
                 text-decoration: none;
             }
 
             &.active {
-                background-color: @color-blue-white-lighter;
+                background-color: @background-color-active;
+
+                &:active {
+                    background-color: @background-color-active-on-pressed;
+                }
             }
         }
     }

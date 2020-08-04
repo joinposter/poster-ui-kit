@@ -11,18 +11,22 @@ const PageHeader = (props) => {
         title, backUrl, loading, quantity, pages, onBackClick,
     } = props;
 
+    const className = `p-page-header p-font-normal ${pages.length > 0 ? 'p-page-header-with-tabs' : ''}`;
+
     return (
-        <div className="p-page-header p-font-normal">
+        <div className={className}>
             {Boolean(backUrl) && (
                 <a href={backUrl} onClick={onBackClick} className="btn-back">
                     <img src={ArrowBack} alt="Back" />
                 </a>
             )}
 
-            <h2 className="p-ib">
-                {title}
+            <div className="p-page-header-title">
+                <h2 className="p-ib">
+                    {title}
+                </h2>
                 <span className="quantity">{loading ? <Spinner small /> : quantity}</span>
-            </h2>
+            </div>
 
             <ul className="page-tabs">
                 {pages.map(page => (
