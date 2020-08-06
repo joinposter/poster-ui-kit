@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 // import PosterUiKit from '../../src/build'; // npm run dev // Uncomment for real-time testing
 import PosterUiKit from 'poster-ui-kit';
 
+
 function DemoApp() {
     return (
         <div>
@@ -104,6 +105,18 @@ function DemoApp() {
                 <PosterUiKit.Tooltip>
                     Helpful tip here
                 </PosterUiKit.Tooltip>
+
+                <hr />
+
+                <div className="dropdown-container" style={{ paddingBottom: 80 }}>
+                    <button type="button">Button with dropdown</button>
+                    <PosterUiKit.Dropdown show>
+                        <ul>
+                            <li>Anything</li>
+                            <li>Here</li>
+                        </ul>
+                    </PosterUiKit.Dropdown>
+                </div>
 
                 <hr />
 
