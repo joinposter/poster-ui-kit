@@ -6,7 +6,7 @@ const BlockTitle = (props) => {
 
     return (
         <div className="p-block-title">
-            <p className="p-title">{title}</p>
+            <div className="p-title">{title}</div>
             {Boolean(hint) && (<p className="p-hint">{hint}</p>)}
         </div>
     );

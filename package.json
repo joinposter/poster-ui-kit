@@ -1,6 +1,6 @@
 {
   "name": "poster-ui-kit",
-  "version": "1.7.4",
+  "version": "1.7.5",
   "description": "",
   "main": "./dist/bundle.min.js",
   "scripts": {
@@ -10,6 +10,11 @@
     "deploy": "npm run build && npm publish",
     "release": "release-it"
   },
+  "browserslist": [
+    "defaults",
+    "iOS >= 8",
+    "Chrome >= 40"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/joinposter/poster-ui-kit.git"
@@ -21,6 +26,8 @@
   },
   "homepage": "https://github.com/joinposter/poster-ui-kit#readme",
   "devDependencies": {
+    "postcss-loader": "3.0.0",
+    "autoprefixer": "9.8.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^7.1.0",

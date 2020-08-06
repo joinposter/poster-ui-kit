@@ -74,6 +74,15 @@ module.exports = {
                 use: [
                     { loader: 'style-loader' },
                     { loader: 'css-loader' },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            ident: 'postcss',
+                            plugins: [
+                                require('autoprefixer')(),
+                            ],
+                        },
+                    },
                     { loader: 'less-loader' },
                 ],
             },
