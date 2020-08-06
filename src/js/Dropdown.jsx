@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 
@@ -35,11 +34,10 @@ export default class Dropdown extends React.Component {
         document.removeEventListener('touch', this.handleClickOutside, true);
     }
 
-
     handleClickOutside = (event) => {
-        const domNode = ReactDOM.findDOMNode(this);
+        const domNode = document.getElementsByClassName('p-dropdown-container')[0];
 
-        if ((!domNode || !domNode.contains(event.target))) {
+        if (!domNode || !domNode.contains(event.target)) {
             document.removeEventListener('click', this.handleClickOutside, true);
             document.removeEventListener('touch', this.handleClickOutside, true);
 
@@ -53,7 +51,7 @@ export default class Dropdown extends React.Component {
         if (!show) return null;
 
         return (
-            <div className={`dropdown ${className} ${origin}`} style={{ padding }}>
+            <div className={`p-dropdown ${className} ${origin}`} style={{ padding }}>
                 <div style={{ zIndex: 1, position: 'relative' }}>
                     {children}
                 </div>

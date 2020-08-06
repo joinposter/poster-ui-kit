@@ -1,6 +1,6 @@
 {
   "name": "poster-ui-kit",
-  "version": "1.7.0",
+  "version": "1.7.4",
   "description": "",
   "main": "./dist/bundle.min.js",
   "scripts": {
