@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import Spinner from './Spinner';
 
-import MenuIcon from '../img/menu-icon.svg';
 import ArrowBack from '../img/arrow-back.svg';
 
 
@@ -12,20 +11,15 @@ const PageHeader = (props) => {
         title, backUrl, loading, quantity, pages, onBackClick,
     } = props;
 
-    const className = `p-page-header manage-page-header p-font-normal ${pages.length > 0 ? 'p-page-header-with-tabs' : ''}`;
+    const className = `p-page-header p-font-normal ${pages.length > 0 ? 'p-page-header-with-tabs' : ''}`;
 
     return (
         <div className={className}>
-
-            {
-                (backUrl) ? (
-                    <a href={backUrl} onClick={onBackClick} className="btn-back">
-                        <img src={ArrowBack} alt="Back" />
-                    </a>
-                ) : (
-                    <img className="mobile-side-menu-open" src={MenuIcon} alt="Menu"/>
-                )
-            }
+            {Boolean(backUrl) && (
+                <a href={backUrl} onClick={onBackClick} className="btn-back">
+                    <img src={ArrowBack} alt="Back" />
+                </a>
+            )}
 
             <div className="p-page-header-title">
                 <h2 className="p-ib">
