@@ -25,6 +25,9 @@ class DemoApp extends React.Component {
                         { url: '#', name: 'Pricing plan', active: true },
                         { url: '#', name: 'Details and notifications' },
                     ]}
+                    actionButton={
+                        <PosterUiKit.Button onClick={() => alert('Header button clicked')}>Add</PosterUiKit.Button>
+                    }
                 />
 
                 <div style={{ padding: '20px 30px 80px 30px' }}>
