@@ -9,7 +9,7 @@ import MenuIcon from '../img/menu-icon.svg';
 
 const PageHeader = (props) => {
     const {
-        title, backUrl, loading, quantity, pages, onBackClick,
+        title, backUrl, loading, quantity, pages, onBackClick, actionButton,
     } = props;
 
     const className = `p-page-header manage-page-header p-font-normal ${pages.length > 0 ? 'p-page-header-with-tabs' : ''}`;
@@ -41,6 +41,12 @@ const PageHeader = (props) => {
                     </li>
                 ))}
             </ul>
+
+            {Boolean(actionButton) && (
+                <div className="p-tabs-button">
+                    {actionButton}
+                </div>
+            )}
         </div>
     );
 };
@@ -59,7 +65,7 @@ PageHeader.propTypes = {
         name: PropTypes.string,
         onClick: PropTypes.func,
     })),
-
+    actionButton: PropTypes.instanceOf(Object),
 };
 
 PageHeader.defaultProps = {
@@ -69,6 +75,7 @@ PageHeader.defaultProps = {
     loading: false,
     pages: [],
     quantity: null,
+    actionButton: null,
 };
 
 export default PageHeader;
