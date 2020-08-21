@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // import PosterUiKit from '../../dist/bundle.min'; // npm run build // Uncomment to test a build
-import PosterUiKit from '../../src/build'; // npm run dev // Uncomment for real-time testing
-// import PosterUiKit from 'poster-ui-kit';
+// import PosterUiKit from '../../src/build'; // npm run dev // Uncomment for real-time testing
+import PosterUiKit from 'poster-ui-kit';
 
 
 class DemoApp extends React.Component {

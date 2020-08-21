@@ -17,15 +17,13 @@ const PageHeader = (props) => {
     return (
         <div className={className}>
 
-            {
-                (backUrl) ? (
-                    <a href={backUrl} onClick={onBackClick} className="btn-back">
-                        <img src={ArrowBack} alt="Back" />
-                    </a>
-                ) : (
-                    <img className="mobile-side-menu-open" src={MenuIcon} alt="Menu"/>
-                )
-            }
+            {backUrl ? (
+                <a href={backUrl} onClick={onBackClick} className="btn-back">
+                    <img src={ArrowBack} alt="Back" />
+                </a>
+            ) : (
+                <img className="mobile-side-menu-open" src={MenuIcon} alt="Menu" />
+            )}
 
             <div className="p-page-header-title">
                 <h2 className="p-ib">
