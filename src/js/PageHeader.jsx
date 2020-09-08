@@ -34,8 +34,8 @@ const PageHeader = (props) => {
 
             <ul className="page-tabs">
                 {pages.map(page => (
-                    <li key={page.url + page.name} className={` ${page.active ? 'active' : ''}`}>
-                        <a onClick={page.onClick} href={page.url}>{page.name}</a>
+                    <li onClick={page.onClick} key={page.url + page.name} className={` ${page.active ? 'active' : ''}`}>
+                        <a href={page.url}>{page.name}</a>
                     </li>
                 ))}
             </ul>
